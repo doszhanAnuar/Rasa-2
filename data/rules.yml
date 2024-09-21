@@ -1,0 +1,210 @@
+version: "3.1"
+rules:
+  - rule: пользователь выбирает казахский язык
+    steps:
+      - intent: choose_kazakh
+      - action: utter_language_selected_kazakh
+      - slot_was_set:
+          - language: "kazakh"
+      - action: utter_kzbeginning
+
+  - rule: пользователь выбирает русский язык
+    steps:
+      - intent: choose_russian
+      - action: utter_language_selected_russian
+      - slot_was_set:
+          - language: "russian"
+      - action: utter_rubeginning
+
+  - rule: пользователь сообщает, что робота не слышно
+    steps:
+      - intent: ask_no_sound
+      - action: utter_no_sound_response
+      
+  - rule: пользователь говорит "Да" после вопроса о звуке
+    steps:
+      - action: utter_no_sound_response
+      - intent: confirm
+      - action: utter_return_to_rubeginning
+
+  - rule: пользователь говорит "Нет" после вопроса о звуке
+    steps:
+      - action: utter_no_sound_response
+      - intent: reject
+      - action: utter_goodbye_due_to_sound_issue
+  
+  - rule: пользователь спрашивает, что значит Айдос
+    steps:
+      - intent: ask_meaning_of_aidos
+      - action: utter_explain_aidos
+      - action: utter_return_to_rubeginning
+
+  - rule: пользователь спрашивает, где основана компания
+    steps:
+      - intent: ask_company_location
+      - action: utter_company_location
+      - action: utter_return_to_rubeginning
+
+  - rule: пользователь спрашивает, когда была основана компания
+    steps:
+      - intent: ask_company_founded
+      - action: utter_company_founded
+      - action: utter_return_to_rubeginning
+
+  - rule: пользователь спрашивает, с кем вы работаете
+    steps:
+      - intent: ask_clients
+      - action: utter_clients
+      - action: utter_return_to_rubeginning
+
+  - rule: пользователь спрашивает о коллекшн
+    steps:
+      - intent: ask_collection
+      - action: utter_collection_info
+      - action: utter_return_to_rubeginning
+
+  - rule: пользователь спрашивает о телемаркетинге
+    steps:
+      - intent: ask_telemarketing
+      - action: utter_telemarketing_info
+      - action: utter_return_to_rubeginning
+
+  - rule: пользователь спрашивает о синтезе речи
+    steps:
+      - intent: ask_speech_synthesis
+      - action: utter_speech_synthesis_info
+      - action: utter_return_to_rubeginning
+  
+  - rule: вопрос о направлении звонка
+    steps:
+      - intent: ask_call_destination
+      - action: utter_ask_call_destination
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о состоянии дел
+    steps:
+      - intent: ask_how_are_you
+      - action: utter_ask_how_are_you
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос об условиях роботов
+    steps:
+      - intent: ask_robot_conditions
+      - action: utter_ask_robot_conditions
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о услугах
+    steps:
+      - intent: ask_services
+      - action: utter_ask_services
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о сотрудниках
+    steps:
+      - intent: ask_employees
+      - action: utter_ask_employees
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о шутке
+    steps:
+      - intent: ask_joke
+      - action: utter_ask_joke
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о странах
+    steps:
+      - intent: ask_countries
+      - action: utter_ask_countries
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о компании
+    steps:
+      - intent: tell_about_company
+      - action: utter_tell_about_company
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос об основателе
+    steps:
+      - intent: ask_founder
+      - action: utter_ask_founder
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о роботе
+    steps:
+      - intent: ask_if_robot
+      - action: utter_ask_if_robot
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о вакансиях
+    steps:
+      - intent: ask_vacancies
+      - action: utter_ask_vacancies
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о цене робота
+    steps:
+      - intent: ask_robot_price
+      - action: utter_ask_robot_price
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о контактах
+    steps:
+      - intent: ask_contact
+      - action: utter_ask_contact
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о местоположении
+    steps:
+      - intent: ask_location
+      - action: utter_ask_location
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о времени разработки
+    steps:
+      - intent: ask_development_time
+      - action: utter_ask_development_time
+      - action: utter_return_to_rubeginning
+
+  - rule: вопрос о партнёрстве
+    steps:
+      - intent: ask_partnership
+      - action: utter_ask_partnership
+      - action: utter_return_to_rubeginning
+
+  - rule: соединение с оператором
+    steps:
+      - intent: ask_operator
+      - action: utter_ask_operator
+      - action: utter_return_to_rubeginning
+
+  - rule: Ответ на вопрос о языках
+    steps:
+      - intent: ask_languages
+      - action: utter_ask_languages
+      - action: utter_return_to_rubeginning
+
+  - rule: Ответ на вопрос о качестве распознавания
+    steps:
+      - intent: ask_recognition_quality
+      - action: utter_ask_recognition_quality
+      - action: utter_return_to_rubeginning
+
+  - rule: Ответ на вопрос о чат-ботах
+    steps:
+      - intent: ask_chatbots
+      - action: utter_ask_chatbots
+      - action: utter_return_to_rubeginning
+
+  - rule: Ответ на вопрос о линии звонков
+    steps:
+      - intent: ask_inbound_outbound
+      - action: utter_ask_inbound_outbound
+      - action: utter_return_to_rubeginning
+
+  - rule: Ответ на вопрос о имени
+    steps:
+      - intent: ask_name
+      - action: utter_ask_name
+      - action: utter_return_to_rubeginning
+
+  

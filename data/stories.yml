@@ -1,0 +1,301 @@
+
+stories:
+  - story: выбор казахского языка
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: choose_kazakh
+      - slot_was_set:
+          - language: "kazakh"
+      - action: utter_language_selected_kazakh
+      - action: utter_kzbeginning
+      
+  - story: пользователь подтверждает вопрос
+    steps:
+      - intent: confirm
+      - action: utter_ask_question
+
+  - story: выбор русского языка
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: choose_russian
+      - slot_was_set:
+          - language: "russian"
+      - action: utter_language_selected_russian
+      - action: utter_rubeginning
+
+  - story: проблема со звуком, пользователь сообщает о проблеме
+    steps:
+      - intent: ask_no_sound
+      - action: utter_no_sound_response
+      
+  - story: проблема со звуком, пользователь говорит "Да"
+    steps:
+      - action: utter_no_sound_response
+      - intent: confirm
+      - action: utter_return_to_rubeginning
+
+  - story: проблема со звуком, пользователь говорит "Нет"
+    steps:
+      - action: utter_no_sound_response
+      - intent: reject
+      - action: utter_goodbye_due_to_sound_issue
+
+  - story: пользователь спрашивает, что значит Айдос
+    steps:
+      - intent: ask_meaning_of_aidos
+      - action: utter_explain_aidos
+      - action: utter_return_to_rubeginning
+
+  - story: пользователь спрашивает, где основана компания
+    steps:
+      - intent: ask_company_location
+      - action: utter_company_location
+      - action: utter_return_to_rubeginning
+
+  - story: пользователь спрашивает, когда была основана компания
+    steps:
+      - intent: ask_company_founded
+      - action: utter_company_founded
+      - action: utter_return_to_rubeginning
+
+  - story: пользователь спрашивает, с кем вы работаете
+    steps:
+      - intent: ask_clients
+      - action: utter_clients
+      - action: utter_return_to_rubeginning
+  
+  - story: пользователь спрашивает о коллекшн
+    steps:
+      - intent: ask_collection
+      - action: utter_collection_info
+      - action: utter_return_to_rubeginning
+
+  - story: пользователь спрашивает о телемаркетинге
+    steps:
+      - intent: ask_telemarketing
+      - action: utter_telemarketing_info
+      - action: utter_return_to_rubeginning
+
+  - story: пользователь спрашивает о синтезе речи
+    steps:
+      - intent: ask_speech_synthesis
+      - action: utter_speech_synthesis_info
+      - action: utter_return_to_rubeginning
+
+  - story: robot_skills_and_dollar_weather
+    steps:
+      - intent: ask_robot_skills
+      - action: utter_robot_skills
+      - intent: ask_dollar_weather
+      - action: utter_dollar_weather
+      - action: utter_return_to_rubeginning
+
+  - story: robot_skills_and_dollar_today
+    steps:
+      - intent: ask_robot_skills
+      - action: utter_robot_skills
+      - intent: ask_dollar_today
+      - action: utter_dollar_today
+      - action: utter_return_to_rubeginning
+
+  - story: robot_skills_and_weather
+    steps:
+      - intent: ask_robot_skills
+      - action: utter_robot_skills
+      - intent: ask_weather
+      - action: utter_weather
+      - action: utter_return_to_rubeginning
+
+  - story: вопрос о направлении звонка
+    steps:
+      - intent: ask_call_destination
+      - action: utter_ask_call_destination
+      - action: utter_return_to_rubeginning
+
+  - story: вопрос о состоянии дел
+    steps:
+      - intent: ask_how_are_you
+      - action: utter_ask_how_are_you
+      - action: utter_return_to_rubeginning
+
+  - story: вопрос о условиях роботов
+    steps:
+      - intent: ask_robot_conditions
+      - action: utter_ask_robot_conditions
+      - action: utter_return_to_rubeginning
+
+
+  - story: вопрос о услугах
+    steps:
+      - intent: ask_services
+      - action: utter_ask_services
+      - action: utter_return_to_rubeginning
+
+  - story: вопрос о сотрудниках
+    steps:
+      - intent: ask_employees
+      - action: utter_ask_employees
+      - action: utter_return_to_rubeginning
+
+  - story: вопрос о шутке
+    steps:
+      - intent: ask_joke
+      - action: utter_ask_joke
+      - action: utter_return_to_rubeginning
+
+  - story: вопрос о странах
+    steps:
+      - intent: ask_countries
+      - action: utter_ask_countries
+      - action: utter_return_to_rubeginning
+
+
+  - story: User asks about the company
+    steps:
+      - intent: tell_about_company
+      - action: utter_tell_about_company
+      - action: utter_return_to_rubeginning
+
+  - story: User asks about the founder
+    steps:
+      - intent: ask_founder
+      - action: utter_ask_founder
+      - action: utter_return_to_rubeginning
+
+  - story: User asks if it's a robot
+    steps:
+      - intent: ask_if_robot
+      - action: utter_ask_if_robot
+      - action: utter_return_to_rubeginning
+
+  - story: User asks about vacancies
+    steps:
+      - intent: ask_vacancies
+      - action: utter_ask_vacancies
+      - action: utter_return_to_rubeginning
+
+  - story: User asks about robot price
+    steps:
+      - intent: ask_robot_price
+      - action: utter_ask_robot_price
+      - action: utter_return_to_rubeginning
+
+  - story: User asks how to contact
+    steps:
+      - intent: ask_contact
+      - action: utter_ask_contact
+      - action: utter_return_to_rubeginning
+
+  - story: User asks location
+    steps:
+      - intent: ask_location
+      - action: utter_ask_location
+      - action: utter_return_to_rubeginning
+
+  - story: User asks development time
+    steps:
+      - intent: ask_development_time
+      - action: utter_ask_development_time
+      - action: utter_return_to_rubeginning
+
+  - story: User asks about partnership
+    steps:
+      - intent: ask_partnership
+      - action: utter_ask_partnership
+      - action: utter_return_to_rubeginning
+
+  - story: User asks to connect with an operator
+    steps:
+      - intent: ask_operator
+      - action: utter_ask_operator
+      - action: utter_return_to_rubeginning
+
+  - story: спросить про языки
+    steps:
+      - intent: ask_languages
+      - action: utter_ask_languages
+      - action: utter_return_to_rubeginning
+
+  - story: спросить про качество распознавания
+    steps:
+      - intent: ask_recognition_quality
+      - action: utter_ask_recognition_quality
+      - action: utter_return_to_rubeginning
+
+  - story: спросить про чат-ботов
+    steps:
+      - intent: ask_chatbots
+      - action: utter_ask_chatbots
+      - action: utter_return_to_rubeginning
+
+  - story: спросить про входящую или исходящую линию
+    steps:
+      - intent: ask_inbound_outbound
+      - action: utter_ask_inbound_outbound
+      - action: utter_return_to_rubeginning
+
+  - story: спросить имя
+    steps:
+      - intent: ask_name
+      - action: utter_ask_name
+      - action: utter_return_to_rubeginning
+
+  - story: User says "Нет вопросов"
+    steps:
+      - intent: no_questions
+      - action: action_suggest_random_topic
+
+  - story: предложить тему для разговора
+    steps:
+      - intent: just_calling
+      - action: utter_understood_suggest_topic
+      - slot_was_set:
+          - current_question: "узнать почему компании выбирают нас"
+      - action: action_suggest_random_topic
+      - intent: confirm
+      - slot_was_set:
+          - partnership_confirmed: true
+      - action: utter_detailed_response
+      
+      - intent: confirm
+      - action: utter_partner_yes
+
+
+  
+      
+
+
+  
+
+  - story: User says "Нет"
+    steps:
+      - intent: reject
+      - action: utter_sad_response
+
+  - story: User says "Не знаю"
+    steps:
+      - intent: unsure
+      - action: utter_unsure_response
+
+ 
+
+  - story: User says "Нет" to partnership
+    steps:
+      - intent: reject
+      - action: utter_partner_no
+
+  - story: User says "Повторите почту"
+    steps:
+      - intent: ask_repeat_email
+      - action: utter_repeat_email
+
+  - story: User says "Повторите номер"
+    steps:
+      - intent: ask_repeat_phone
+      - action: utter_repeat_phone
+
+  - story: End chat with rating
+    steps:
+      - action: utter_rate_chat
